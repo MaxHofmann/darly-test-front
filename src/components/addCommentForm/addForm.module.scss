@@ -1,0 +1,288 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0px;
+  margin: 0 auto;
+  background: rgb(156, 95, 226);
+  padding: 20px;
+  max-width: 700px;
+  width: 100%;
+  border-radius: 20px;
+
+  h1 {
+    text-align: center;
+    color: rgb(255, 251, 0);
+    margin: 0 0 15px;
+  }
+}
+
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.inputText {
+  padding: 10px 20px;
+  font: 600 20px/22px 'Heebo', sans-serif;
+  color: #9c5fe2;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 4px 5px 8px #672f6796;
+
+  &::placeholder {
+    color: #9c5fe2;
+  }
+}
+
+.inputLabel {
+  color: rgb(255, 251, 0);
+  font: 600 23px/25px 'Heebo', sans-serif;
+  letter-spacing: 0.5px;
+  padding: 0 5px;
+}
+
+.textareaText {
+  padding: 10px 20px;
+  font: 600 20px/22px 'Heebo', sans-serif;
+  color: #9c5fe2;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 4px 5px 8px #672f6796;
+  min-width: 100%;
+  max-width: 100%;
+
+  &::placeholder {
+    color: #9c5fe2;
+  }
+}
+
+.inputSubmit {
+  color: rgb(156, 95, 226);
+  background: rgb(255, 251, 0);
+  font: 600 23px/25px 'Heebo', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 15px;
+  transition: background-Color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background: rgb(255, 0, 255);
+    color: rgb(255, 251, 0);
+  }
+}
+
+.inputSubmitWrap {
+  display: flex;
+}
+
+.inputSubmitError {
+  display: flex;
+  input[type='submit'] {
+    animation: input-Submit-Error 1s forwards;
+    @keyframes input-Submit-Error {
+      1% {
+        transform: rotate(2deg);
+        background-color: #ff0000;
+        color: aliceblue;
+      }
+      5% {
+        transform: rotate(-4deg);
+      }
+      10% {
+        transform: rotate(4deg);
+      }
+      15% {
+        transform: rotate(-4deg);
+      }
+      20% {
+        transform: rotate(4deg);
+      }
+      25% {
+        transform: rotate(-4deg);
+      }
+      30% {
+        transform: rotate(4deg);
+      }
+      35% {
+        transform: rotate(-4deg);
+      }
+      40% {
+        transform: rotate(4deg);
+      }
+      45% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(4deg);
+      }
+      55% {
+        transform: rotate(-4deg);
+      }
+      60% {
+        transform: rotate(4deg);
+      }
+      65% {
+        transform: rotate(-4deg);
+      }
+      70% {
+        transform: rotate(4deg);
+      }
+      75% {
+        transform: rotate(-4deg);
+      }
+      80% {
+        transform: rotate(4deg);
+      }
+      85% {
+        transform: rotate(-4deg);
+      }
+      90% {
+        transform: rotate(4deg);
+      }
+      95% {
+        transform: rotate(-4deg);
+        background-color: #ff0000;
+        color: aliceblue;
+      }
+      100% {
+        transform: rotate(0deg);
+        background-color: #5c5c5c;
+        color: #fff;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.inputError {
+  position: absolute;
+  top: -15px;
+  padding: 3px;
+  color: rgb(255, 255, 255);
+  background: #ff0000;
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: input-error 1s forwards;
+
+  @keyframes input-error {
+    0% {
+      right: 0;
+      width: 0;
+      opacity: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    70% {
+      right: 10%;
+      width: 50%;
+      opacity: 1;
+      border-radius: 10px;
+    }
+
+    100% {
+      right: 10%;
+      width: 50%;
+      opacity: 1;
+      overflow: initial;
+      border-radius: 10px 10px 10px 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate3d(-12, 32, 0, 50deg);
+    height: 6px;
+    width: 16px;
+    background: #ff0065;
+    border-radius: 100%;
+    animation: input-error-after 0.3s 0.8s forwards;
+
+    @keyframes input-error-after {
+      0% {
+        bottom: 0;
+        left: 0;
+      }
+
+      100% {
+        bottom: -6px;
+        left: -14px;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate3d(-12, 32, 0, 50deg);
+    height: 4px;
+    width: 8px;
+    background: #ff0065;
+    border-radius: 100%;
+    animation: input-error-before 0.3s 0.9s forwards;
+
+    @keyframes input-error-before {
+      0% {
+        bottom: 0;
+        left: 0;
+      }
+
+      100% {
+        bottom: -10px;
+        left: -19px;
+      }
+    }
+  }
+}
+
+.buttonClose {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #ff0065;
+  margin: 0 0 0 auto;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 4px 5px 8px #672f6796;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    width: 70%;
+    background: #fff;
+    border-radius: 6px;
+    transition: transform 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &::before {
+      transform: translate(-50%, -50%) rotate(225deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-225deg);
+    }
+  }
+}

@@ -1,9 +1,10 @@
-import { Form } from './Form';
+import { Form } from '../authForm';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
-import { setUser } from '../redux/slices/userSlice';
-import { useAppDispatch } from '../hooks/redux-hooks';
+import { setUser } from '../../redux/slices/auth/userSlice';
+import { useAppDispatch } from '../../redux/store';
+import styles from './signUp.module.scss';
 
 const SignUp = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,11 @@ const SignUp = () => {
       .catch(console.error);
   };
 
-  return <Form title="sign-up" handleClick={handleSignUp} />;
+  return (
+    <div className={styles.wrapForm}>
+      <Form title="Sign-up" handleClick={handleSignUp} />
+    </div>
+  );
 };
 
 export { SignUp };

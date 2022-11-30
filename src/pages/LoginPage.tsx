@@ -1,15 +1,23 @@
 import { Link } from 'react-router-dom';
-import { SignIn } from '../components/SignIn';
+import { SignIn } from '../components/signIn';
+
+import styles from './pagesStyle.module.scss';
+import { motion } from 'framer-motion';
 
 const LoginPage = () => {
   return (
-    <div>
-      <h1>Sign in</h1>
+    <>
       <SignIn />
-      <p>
-        Or <Link to="/register">Sing up</Link>
-      </p>
-    </div>
+      <motion.div
+        className={styles.formSwitching}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 17 }}>
+        <Link to="/register" className={styles.btnLink}>
+          Sing up
+        </Link>
+      </motion.div>
+    </>
   );
 };
 
